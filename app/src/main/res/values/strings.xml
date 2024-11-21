@@ -28,4 +28,9 @@
     <string name="klasifikasi">Klasifikasi</string>
     <string name="desc_emisi_karbon">Lihat detail emisi karbon yang Anda hasilkan setiap hari!</string>
     <string name="lihat_detail">Lihat Detail</string>
+    <string name="user_name">User</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="profil">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
