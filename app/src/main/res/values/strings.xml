@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PlanetKuApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_article">Article</string>
+    <string name="title_more">Menu Lainnya</string>
+    <string name="deskripsi">Udah siap menjaga bumi kita hari ini?</string>
+    <string name="jejak_karbon">Jejak Karbon Kamu</string>
+    <string name="detail_emisi_karbon">Detail Emisi Karbonmu</string>
+    <string name="klasifikasi_sampah">Klasifikasi Sampah</string>
+    <string name="desc_klasifikasi_sampah">Lakukan klasifikasi sampah agar mengetahui jenis sampah yang sesuai!</string>
+    <string name="emisi_karbon">Emisi Karbon</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="artikel_terbaru">Artikel Terbaru</string>
+    <string name="planetku">PlanetKu</string>
+    <string name="Planetku">PlanetKu</string>
+    <string name="register_dahulu">Belum mempunyai akun? Silahkan register terlebih dahulu</string>
+    <string name="register">Register</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="sudah_punya_akun">Sudah mempunyai akun? Silahkan masuk</string>
+    <string name="klasifikasi">Klasifikasi</string>
+    <string name="desc_emisi_karbon">Lihat detail emisi karbon yang Anda hasilkan setiap hari!</string>
+    <string name="lihat_detail">Lihat Detail</string>
+</resources>
