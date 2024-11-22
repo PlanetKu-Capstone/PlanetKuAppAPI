@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.dicoding.planetkuapp.databinding.ActivityMainBinding
-import com.dicoding.planetkuapp.ui.SettingsFragment
+import com.dicoding.planetkuapp.ui.settings.SettingsFragment
 import com.dicoding.planetkuapp.ui.profile.ProfileFragment
 import com.dicoding.planetkuapp.ui.home.HomeFragment
 
