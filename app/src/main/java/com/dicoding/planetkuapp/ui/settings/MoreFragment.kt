@@ -1,4 +1,4 @@
-package com.dicoding.planetkuapp.ui.more
+package com.dicoding.planetkuapp.ui.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater

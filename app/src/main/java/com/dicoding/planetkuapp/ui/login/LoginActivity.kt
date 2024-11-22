@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.planetkuapp.MainActivity
-import com.dicoding.planetkuapp.R
 import com.dicoding.planetkuapp.databinding.ActivityLoginBinding
 import com.dicoding.planetkuapp.ui.register.RegisterActivity
 

@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.dicoding.planetkuapp.ui.article.ArticleFragment"
+        android:name="com.dicoding.planetkuapp.ui.profile.ArticleFragment"
         android:label="@string/title_article"
         tools:layout="@layout/fragment_article" />
 
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.dicoding.planetkuapp.ui.more.MoreFragment"
+        android:name="com.dicoding.planetkuapp.ui.settings.MoreFragment"
         android:label="Menu Lainnya">
         <action
             android:id="@+id/action_moreFragment_to_profileFragment"
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.dicoding.planetkuapp.ui.ProfileFragment"
+        android:name="com.dicoding.planetkuapp.ui.profile.ProfileFragment"
         android:label="Profil" />
 
     <fragment

@@ -1,4 +1,4 @@
-package com.dicoding.planetkuapp.ui.more
+package com.dicoding.planetkuapp.ui.settings
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
