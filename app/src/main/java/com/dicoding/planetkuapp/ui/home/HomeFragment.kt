@@ -1,5 +1,6 @@
 package com.dicoding.planetkuapp.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,27 +13,30 @@ import com.dicoding.planetkuapp.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnKlasifikasi.setOnClickListener {
+            startActivity(Intent(requireContext(), ClassificationActivity::class.java))
         }
-        return root
+
+        binding.btnEmisi.setOnClickListener {
+            startActivity(Intent(requireContext(), EmissionActivity::class.java))
+        }
+
+        binding.btnPrediksi.setOnClickListener {
+            startActivity(Intent(requireContext(), PredictionActivity::class.java))
+        }
     }
 
     override fun onDestroyView() {

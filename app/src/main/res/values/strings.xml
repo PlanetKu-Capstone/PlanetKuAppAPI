@@ -3,11 +3,11 @@
     <string name="title_home">Home</string>
     <string name="title_article">Article</string>
     <string name="title_more">Menu Lainnya</string>
-    <string name="deskripsi">Udah siap menjaga bumi kita hari ini?</string>
+    <string name="deskripsi">Apakah siap menjaga planet kita hari ini?</string>
     <string name="jejak_karbon">Jejak Karbon Kamu</string>
     <string name="detail_emisi_karbon">Detail Emisi Karbonmu</string>
     <string name="klasifikasi_sampah">Klasifikasi Sampah</string>
-    <string name="desc_klasifikasi_sampah">Lakukan klasifikasi sampah agar mengetahui jenis sampah yang sesuai!</string>
+    <string name="desc_klasifikasi_sampah">Mulai langkah kecil untuk bumi yang lebih bersih! Identifikasi sampah Anda dan kelola dengan bijak.</string>
     <string name="emisi_karbon">Emisi Karbon</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
@@ -26,13 +26,22 @@
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="sudah_punya_akun">Sudah mempunyai akun? Silahkan masuk</string>
     <string name="klasifikasi">Klasifikasi</string>
-    <string name="desc_emisi_karbon">Lihat detail emisi karbon yang Anda hasilkan setiap hari!</string>
+    <string name="desc_emisi_karbon">Bantu bumi bernapas lebih baik! Ketahui emisi karbon Anda dan temukan cara menguranginya.</string>
     <string name="lihat_detail">Lihat Detail</string>
     <string name="user_name">User</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="profil">Profil</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings">Settings</string>
     <string name="profile">Profile</string>
+    <string name="prediksi_harga">Prediksi Harga Sampah</string>
+    <string name="desc_prediksi_harga">Ubah sampah menjadi sumber penghasilan! Temukan harga perkiraan sampah Anda dan mulai langkah kecil untuk keberlanjutan lingkungan.</string>
+    <string name="prediksi">Prediksi</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="address">Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="logout">Logout</string>
 </resources>
