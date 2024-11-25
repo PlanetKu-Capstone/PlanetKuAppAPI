@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.dicoding.planetkuapp.databinding.FragmentHomeBinding
+import com.dicoding.planetkuapp.ui.classification.WasteClassificationFragment
 
 class HomeFragment : Fragment() {
 
@@ -27,7 +26,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnKlasifikasi.setOnClickListener {
-            startActivity(Intent(requireContext(), ClassificationActivity::class.java))
+            startActivity(Intent(requireContext(), WasteClassificationFragment::class.java))
         }
 
         binding.btnEmisi.setOnClickListener {

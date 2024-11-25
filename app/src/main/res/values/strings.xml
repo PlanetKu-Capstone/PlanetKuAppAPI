@@ -44,4 +44,10 @@
     <string name="address">Address</string>
     <string name="phone_number">Phone Number</string>
     <string name="logout">Logout</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="kamera">Kamera</string>
+    <string name="galeri">Galeri</string>
+    <string name="alamat">Alamat</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="simpan_profil">Simpan Profil</string>
 </resources>

@@ -43,14 +43,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/action_sign_in_short"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/light_green"/>
 
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_dahulu"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/black"
         android:layout_marginTop="16dp"
         android:gravity="center" />
 </LinearLayout>

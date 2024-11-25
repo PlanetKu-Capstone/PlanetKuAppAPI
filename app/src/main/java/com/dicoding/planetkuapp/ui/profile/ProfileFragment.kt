@@ -1,9 +1,11 @@
 package com.dicoding.planetkuapp.ui.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dicoding.planetkuapp.R
@@ -17,34 +19,41 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Menginisialisasi ViewBinding
         _binding = FragmentProfileBinding.bind(view)
 
-        // Menampilkan data pengguna (bisa dari API atau database)
-        binding.tvUsername.text = "John Doe"
-        binding.ivProfile.setImageResource(R.drawable.ic_profile)
-
-        // Edit profile button
-        binding.btnEditProfile.setOnClickListener {
-            // Menavigasi ke halaman edit profil
-            findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
-        }
-
-        // Edit Nama
         binding.etName.setText("John Doe")
-        // Edit Email
         binding.etEmail.setText("johndoe@example.com")
-        // Edit Address
         binding.etAddress.setText("123 Green St, Earth City")
-        // Edit Phone
         binding.etPhone.setText("+1234567890")
 
-        // Kamu bisa menambahkan logika untuk menyimya menggunakan SharedPreferences, database, atau API
+        binding.btnSaveProfile.setOnClickListener {
+            val name = binding.etName.text.toString()
+            val email = binding.etEmail.text.toString()
+            val address = binding.etAddress.text.toString()
+            val phone = binding.etPhone.text.toString()
+
+            if (name.isEmpty() || email.isEmpty() || address.isEmpty() || phone.isEmpty()) {
+                Toast.makeText(requireContext(), "Harap isi semua field!", Toast.LENGTH_SHORT).show()
+            } else {
+                saveProfileData(name, email, address, phone)
+
+                Toast.makeText(requireContext(), "Profil berhasil disimpan!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun saveProfileData(name: String, email: String, address: String, phone: String) {
+        val sharedPreferences = requireContext().getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
+        sharedPreferences.edit()
+            .putString("name", name)
+            .putString("email", email)
+            .putString("address", address)
+            .putString("phone", phone)
+            .apply()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Menghancurkan binding saat view dihancurkan untuk mencegah memory leak
         _binding = null
     }
 }

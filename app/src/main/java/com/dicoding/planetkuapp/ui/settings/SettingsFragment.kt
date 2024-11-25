@@ -19,34 +19,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        _binding = FragmentSettingsBinding.bind(view)
-
-        binding.switchDarkMode.isChecked = isDarkModeEnabled()
-
-        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                enableDarkMode()
-            } else {
-                disableDarkMode()
-            }
-        }
-
         binding.btnLogout.setOnClickListener {
             Toast.makeText(requireContext(), "Logout Clicked", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun isDarkModeEnabled(): Boolean {
-        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        return currentNightMode == Configuration.UI_MODE_NIGHT_YES
-    }
-
-    private fun enableDarkMode() {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-    }
-
-    private fun disableDarkMode() {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
     override fun onDestroyView() {
