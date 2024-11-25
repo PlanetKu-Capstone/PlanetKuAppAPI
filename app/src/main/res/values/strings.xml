@@ -50,4 +50,18 @@
     <string name="alamat">Alamat</string>
     <string name="nomor_telepon">Nomor Telepon</string>
     <string name="simpan_profil">Simpan Profil</string>
+    <string name="kategori_emisi_karbon">Kategori Emisi Karbon</string>
+    <string name="tambah_aktivitas_baru">Tambah Aktivitas Baru</string>
+    <string name="kategori">Kategori</string>
+    <string name="prediksi_harga_sampah">Prediksi Harga Sampah</string>
+    <string name="jenis_sampah">Jenis Sampah</string>
+    <string name="berat_sampah">Berat Sampah (kg)</string>
+    <string name="masukkan_berat_dalam_kg">Masukkan berat dalam kg</string>
+    <string name="hasil_prediksi_akan_muncul_di_sini">Hasil prediksi akan muncul di sini</string>
+    <string name="hitung_estimasi_harga">Hitung Estimasi Harga</string>
+    <string name="about_app">Tentang Aplikasi</string>
+    <string name="about_app_description">PlanetKu adalah aplikasi inovatif yang dirancang untuk mendukung keberlanjutan lingkungan melalui solusi manajemen sampah yang cerdas.
+    Aplikasi ini mempermudah pengguna dalam memilah jenis sampah, memprediksi harga sampah, serta mengurangi jejak karbon dengan menyediakan
+    informasi emisi yang relevan. PlanetKu juga dilengkapi dengan fitur personalisasi untuk pengalaman yang lebih interaktif, seperti halaman
+    profil dan pengaturan aplikasi. Dengan PlanetKu, Anda dapat berkontribusi langsung dalam menciptakan bumi yang lebih sehat dan berkelanjutan.</string>
 </resources>

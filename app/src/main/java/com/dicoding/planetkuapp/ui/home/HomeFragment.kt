@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.dicoding.planetkuapp.R
 import com.dicoding.planetkuapp.databinding.FragmentHomeBinding
+import com.dicoding.planetkuapp.ui.carbonemission.CarbonEmissionFragment
 import com.dicoding.planetkuapp.ui.classification.WasteClassificationFragment
+import com.dicoding.planetkuapp.ui.priceprediction.PricePredictionFragment
 
 class HomeFragment : Fragment() {
 
@@ -26,15 +30,15 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnKlasifikasi.setOnClickListener {
-            startActivity(Intent(requireContext(), WasteClassificationFragment::class.java))
+            findNavController().navigate(R.id.action_homeFragment_to_wasteClassificationFragment)
         }
 
         binding.btnEmisi.setOnClickListener {
-            startActivity(Intent(requireContext(), EmissionActivity::class.java))
+            startActivity(Intent(requireContext(), CarbonEmissionFragment::class.java))
         }
 
         binding.btnPrediksi.setOnClickListener {
-            startActivity(Intent(requireContext(), PredictionActivity::class.java))
+            startActivity(Intent(requireContext(), PricePredictionFragment::class.java))
         }
     }
 

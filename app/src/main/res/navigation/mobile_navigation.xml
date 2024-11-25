@@ -9,24 +9,10 @@
         android:id="@+id/navigation_home"
         android:name="com.dicoding.planetkuapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.dicoding.planetkuapp.ui.profile.ArticleFragment"
-        android:label="@string/title_article"
-        tools:layout="@layout/fragment_article" />
-
-    <fragment
-        android:id="@+id/moreFragment"
-        android:name="com.dicoding.planetkuapp.ui.settings.MoreFragment"
-        android:label="Menu Lainnya">
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_moreFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_moreFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            android:id="@+id/action_homeFragment_to_wasteClassificationFragment"
+            app:destination="@id/wasteClassificationFragment" />
     </fragment>
 
     <fragment
@@ -35,8 +21,13 @@
         android:label="Profil" />
 
     <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.app.ui.AboutFragment"
-        android:label="Tentang Aplikasi" />
+        android:id="@+id/settingsFragment"
+        android:name="com.dicoding.planetkuapp.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/wasteClassificationFragment"
+        android:name="com.dicoding.planetkuapp.ui.classification.WasteClassificationFragment"
+        android:label="Waste Classification" />
 
 </navigation>
