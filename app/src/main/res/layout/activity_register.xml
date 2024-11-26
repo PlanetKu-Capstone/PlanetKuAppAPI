@@ -11,9 +11,9 @@
     <ImageView
         android:id="@+id/app_logo_register"
         android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_height="150dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/go_green" />
+        android:src="@drawable/planetku" />
 
     <TextView
         android:layout_width="wrap_content"
