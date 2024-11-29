@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.dicoding.planetkuapp.databinding.ActivityMainBinding
-import com.dicoding.planetkuapp.ui.ArticleFragment
-import com.dicoding.planetkuapp.ui.MapsFragment
+import com.dicoding.planetkuapp.ui.article.ArticleFragment
+import com.dicoding.planetkuapp.ui.maps.MapsFragment
 import com.dicoding.planetkuapp.ui.more.MoreFragment
 import com.dicoding.planetkuapp.ui.home.HomeFragment
 

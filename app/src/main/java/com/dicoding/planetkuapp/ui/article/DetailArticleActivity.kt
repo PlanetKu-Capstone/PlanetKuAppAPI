@@ -1,11 +1,7 @@
-package com.dicoding.planetkuapp.ui
+package com.dicoding.planetkuapp.ui.article
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.dicoding.planetkuapp.R
 import com.dicoding.planetkuapp.databinding.ActivityDetailArticleBinding
 
 class DetailArticleActivity : AppCompatActivity() {

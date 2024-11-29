@@ -39,7 +39,7 @@
             android:name=".ui.classification.WasteClassificationActivity"
             android:exported="false"/>
         <activity
-            android:name=".ui.DetailArticleActivity"
+            android:name=".ui.article.DetailArticleActivity"
             android:exported="false" />
         <activity android:name=".ui.profile.ProfileActivity"
             android:exported="false" />

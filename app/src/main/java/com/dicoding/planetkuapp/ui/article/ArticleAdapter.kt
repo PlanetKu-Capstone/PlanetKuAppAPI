@@ -1,11 +1,8 @@
-package com.dicoding.planetkuapp.ui
+package com.dicoding.planetkuapp.ui.article
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.planetkuapp.R
 import com.dicoding.planetkuapp.databinding.ItemArticleBinding
 
 data class Article(

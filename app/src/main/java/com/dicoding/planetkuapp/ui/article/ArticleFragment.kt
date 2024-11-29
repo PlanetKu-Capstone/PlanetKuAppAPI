@@ -1,4 +1,4 @@
-package com.dicoding.planetkuapp.ui
+package com.dicoding.planetkuapp.ui.article
 
 import android.content.Intent
 import android.os.Bundle
