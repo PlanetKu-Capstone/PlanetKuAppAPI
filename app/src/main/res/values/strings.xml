@@ -14,10 +14,11 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">Welcome !</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="login_success">Login Berhasil!</string>
+    <string name="login_failed">Login failed</string>
     <string name="artikel_terbaru">Artikel Terbaru</string>
     <string name="planetku">PlanetKu</string>
     <string name="Planetku">PlanetKu</string>
@@ -64,4 +65,16 @@
     Aplikasi ini mempermudah pengguna dalam memilah jenis sampah, memprediksi harga sampah, serta mengurangi jejak karbon dengan menyediakan
     informasi emisi yang relevan. PlanetKu juga dilengkapi dengan fitur personalisasi untuk pengalaman yang lebih interaktif, seperti halaman
     profil dan pengaturan aplikasi. Dengan PlanetKu, Anda dapat berkontribusi langsung dalam menciptakan bumi yang lebih sehat dan berkelanjutan.</string>
+    <string name="error_email_required">Email tidak boleh kosong!!!</string>
+    <string name="error_password_required">Password tidak boleh kosong!!!</string>
+    <string name="welcome_message">Halo, selamat datang di aplikasi Planetku!</string>
+    <string name="app_description">Planetku adalah aplikasi untuk membantu Anda mengelola sampah dengan mudah, ramah lingkungan, dan mendukung keberlanjutan.</string>
+    <string name="prompt_name">Nama</string>
+    <string name="name_required">Nama tidak boleh kosong</string>
+    <string name="email_required">Email tidak boleh kosong</string>
+    <string name="password_required">Password tidak boleh kosong</string>
+    <string name="register_success">Registrasi berhasil! Silakan login.</string>
+    <string name="map">Maps</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="lihat_prediksi_harga">Lihat Prediksi Harga</string>
 </resources>

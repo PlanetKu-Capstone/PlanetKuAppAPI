@@ -10,24 +10,12 @@
         android:name="com.dicoding.planetkuapp.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_wasteClassificationFragment"
-            app:destination="@id/wasteClassificationFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.dicoding.planetkuapp.ui.profile.ProfileFragment"
-        android:label="Profil" />
-
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.dicoding.planetkuapp.ui.settings.SettingsFragment"
-        android:label="Settings" />
-
-    <fragment
-        android:id="@+id/wasteClassificationFragment"
-        android:name="com.dicoding.planetkuapp.ui.classification.WasteClassificationFragment"
-        android:label="Waste Classification" />
+        android:id="@+id/moreFragment"
+        android:name="com.dicoding.planetkuapp.ui.more.MoreFragment"
+        android:label="More"
+        tools:layout="@layout/fragment_more" />
 
 </navigation>

@@ -34,22 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/tvWeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/berat_sampah"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
-
-        <EditText
-            android:id="@+id/etWeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/masukkan_berat_dalam_kg"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="16dp" />
-
         <Button
             android:id="@+id/btnPredictPrice"
             android:layout_width="match_parent"
@@ -72,3 +56,4 @@
 
     </LinearLayout>
 </ScrollView>
+

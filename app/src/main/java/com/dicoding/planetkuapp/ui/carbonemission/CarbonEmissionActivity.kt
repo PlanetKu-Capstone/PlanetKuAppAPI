@@ -1,19 +1,14 @@
 package com.dicoding.planetkuapp.ui.carbonemission
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.planetkuapp.R
-import com.dicoding.planetkuapp.databinding.FragmentCarbonEmissionBinding
+import com.dicoding.planetkuapp.databinding.ActivityCarbonEmissionBinding
 
-class CarbonEmissionFragment : Fragment(R.layout.fragment_carbon_emission) {
+class CarbonEmissionActivity : AppCompatActivity() {
 
-    private var _binding: FragmentCarbonEmissionBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: ActivityCarbonEmissionBinding
 
     private val carbonCategoryAdapter by lazy {
         CarbonCategoryAdapter { category ->
@@ -21,10 +16,11 @@ class CarbonEmissionFragment : Fragment(R.layout.fragment_carbon_emission) {
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        _binding = FragmentCarbonEmissionBinding.bind(view)
+        binding = ActivityCarbonEmissionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupRecyclerView()
 
@@ -38,7 +34,7 @@ class CarbonEmissionFragment : Fragment(R.layout.fragment_carbon_emission) {
     private fun setupRecyclerView() {
         binding.rvCarbonCategories.apply {
             adapter = carbonCategoryAdapter
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = LinearLayoutManager(this@CarbonEmissionActivity)
         }
     }
 
@@ -55,15 +51,13 @@ class CarbonEmissionFragment : Fragment(R.layout.fragment_carbon_emission) {
     }
 
     private fun navigateToCategoryDetail(category: CarbonCategory) {
-        Toast.makeText(requireContext(), "Navigasi ke ${category.categoryName}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Navigasi ke ${category.categoryName}", Toast.LENGTH_SHORT).show()
+        // Tambahkan logika navigasi ke detail di sini
     }
 
     private fun showAddActivityDialog() {
-        Toast.makeText(requireContext(), "Tambah Aktivitas Baru", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        Toast.makeText(this, "Tambah Aktivitas Baru", Toast.LENGTH_SHORT).show()
+        // Tambahkan logika untuk menampilkan dialog tambah aktivitas di sini
     }
 }
+

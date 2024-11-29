@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.dicoding.planetkuapp.databinding.ActivityMainBinding
-import com.dicoding.planetkuapp.ui.settings.SettingsFragment
-import com.dicoding.planetkuapp.ui.profile.ProfileFragment
+import com.dicoding.planetkuapp.ui.ArticleFragment
+import com.dicoding.planetkuapp.ui.MapsFragment
+import com.dicoding.planetkuapp.ui.more.MoreFragment
 import com.dicoding.planetkuapp.ui.home.HomeFragment
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,8 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.menu_home -> loadFragment(HomeFragment())
-                R.id.menu_profile -> loadFragment(ProfileFragment())
-                R.id.menu_settings -> loadFragment(SettingsFragment())
+                R.id.menu_map -> loadFragment(MapsFragment())
+                R.id.menu_article -> loadFragment(ArticleFragment())
+                R.id.menu_more -> loadFragment(MoreFragment())
             }
             true
         }
@@ -37,3 +38,4 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 }
+

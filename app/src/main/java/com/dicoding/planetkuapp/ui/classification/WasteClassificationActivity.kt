@@ -6,27 +6,29 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.dicoding.planetkuapp.R
-import com.dicoding.planetkuapp.databinding.FragmentWasteClassificationBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.dicoding.planetkuapp.databinding.ActivityWasteClassificationBinding
+import com.dicoding.planetkuapp.ui.priceprediction.PricePredictionActivity
 
-class WasteClassificationFragment : Fragment(R.layout.fragment_waste_classification) {
 
-    private var _binding: FragmentWasteClassificationBinding? = null
-    private val binding get() = _binding!!
+class WasteClassificationActivity : AppCompatActivity() {
 
-    override fun onViewCreated(view: android.view.View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentWasteClassificationBinding.bind(view)
+    private lateinit var binding: ActivityWasteClassificationBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityWasteClassificationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val photo: Bitmap = result.data?.extras?.get("data") as Bitmap
                 binding.ivPreview.setImageBitmap(photo)
             } else {
-                Toast.makeText(requireContext(), "Gagal mengambil gambar dari kamera", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Gagal mengambil gambar dari kamera", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -34,7 +36,7 @@ class WasteClassificationFragment : Fragment(R.layout.fragment_waste_classificat
             if (uri != null) {
                 binding.ivPreview.setImageURI(uri)
             } else {
-                Toast.makeText(requireContext(), "Gagal memilih gambar dari galeri", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Gagal memilih gambar dari galeri", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -46,10 +48,18 @@ class WasteClassificationFragment : Fragment(R.layout.fragment_waste_classificat
         binding.btnGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
         }
+
+        binding.btnPredict.setOnClickListener {
+            val classifiedWaste = "Plastik" // Contoh hasil klasifikasi
+            navigateToPricePrediction(classifiedWaste)
+        }
+
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun navigateToPricePrediction(classifiedWaste: String) {
+        val intent = Intent(this, PricePredictionActivity::class.java)
+        intent.putExtra("CLASSIFIED_WASTE", classifiedWaste)
+        startActivity(intent)
     }
+
 }
