@@ -48,6 +48,7 @@ class CarbonEmissionActivity : AppCompatActivity() {
             CarbonCategory("Inorganic Waste", "40 kg CO2")
         )
         carbonCategoryAdapter.submitList(categories)
+
     }
 
     private fun navigateToCategoryDetail(category: CarbonCategory) {
