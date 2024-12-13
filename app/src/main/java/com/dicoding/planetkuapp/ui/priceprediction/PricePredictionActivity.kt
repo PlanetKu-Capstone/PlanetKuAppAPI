@@ -3,17 +3,18 @@ package com.dicoding.planetkuapp.ui.priceprediction
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.planetkuapp.databinding.ActivityPricePredictionBinding
-import com.dicoding.planetkuapp.api.startLocalApiServer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import java.net.URL
+import okhttp3.*
+import java.io.IOException
 
 class PricePredictionActivity : AppCompatActivity() {
 
@@ -24,9 +25,6 @@ class PricePredictionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPricePredictionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Jalankan server API lokal
-        startLocalApiServer()
 
         val classifiedWaste = intent.getStringExtra("CLASSIFIED_WASTE")
         setupSpinner(classifiedWaste)
@@ -53,28 +51,41 @@ class PricePredictionActivity : AppCompatActivity() {
     private fun predictPrice(wasteType: String) {
         val url = "http://127.0.0.1:8080/predict"
         val requestBody = """{ "item": "$wasteType" }"""
+        val client = OkHttpClient()
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            try {
-                val response = URL(url).openConnection().apply {
-                    doOutput = true
-                    setRequestProperty("Content-Type", "application/json")
-                    outputStream.write(requestBody.toByteArray())
-                }.getInputStream().bufferedReader().readText()
+        val request = Request.Builder()
+            .url(url)
+            .post(RequestBody.create(MediaType.parse("application/json"), requestBody))
+            .build()
 
-                val prediction = Json.decodeFromString<PredictionResponse>(response)
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                showError("Kesalahan jaringan: ${e.message}")
+            }
 
-                withContext(Dispatchers.Main) {
-                    binding.tvPredictionResult.text =
-                        "Estimasi harga untuk ${prediction.item} adalah Rp ${prediction.predicted_price}"
-                    binding.tvPredictionResult.visibility = View.VISIBLE
-                }
-            } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    binding.tvPredictionResult.text = "Gagal memprediksi harga: ${e.message}"
-                    binding.tvPredictionResult.visibility = View.VISIBLE
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    val result = response.body()?.string()
+                    val prediction = Json.decodeFromString<PredictionResponse>(result!!)
+                    showPrediction(prediction)
+                } else {
+                    showError("Gagal memprediksi harga")
                 }
             }
+        })
+    }
+
+    private fun showPrediction(prediction: PredictionResponse) {
+        runOnUiThread {
+            binding.tvPredictionResult.text =
+                "Estimasi harga untuk ${prediction.item} adalah Rp ${prediction.predicted_price}"
+            binding.tvPredictionResult.visibility = View.VISIBLE
+        }
+    }
+
+    private fun showError(message: String) {
+        runOnUiThread {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
     }
 }

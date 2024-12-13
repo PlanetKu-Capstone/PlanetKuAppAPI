@@ -77,4 +77,5 @@
     <string name="map">Maps</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="lihat_prediksi_harga">Lihat Prediksi Harga</string>
+    <string name="register_failed" />
 </resources>

@@ -10,14 +10,19 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.planetkuapp.databinding.ActivityWasteClassificationBinding
-import com.dicoding.planetkuapp.network.ApiClient
-import com.dicoding.planetkuapp.network.WasteResponse
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Multipart
+import retrofit2.http.POST
+import retrofit2.http.Part
 import java.io.File
 
 class WasteClassificationActivity : AppCompatActivity() {
@@ -31,7 +36,6 @@ class WasteClassificationActivity : AppCompatActivity() {
         binding = ActivityWasteClassificationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Launchers
         val cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val photo: Bitmap = result.data?.extras?.get("data") as Bitmap
@@ -72,7 +76,18 @@ class WasteClassificationActivity : AppCompatActivity() {
         val requestFile = file.asRequestBody("image/*".toMediaTypeOrNull())
         val body = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
-        ApiClient.apiService.classifyWaste(body).enqueue(object : Callback<WasteResponse> {
+        val logging = HttpLoggingInterceptor().apply { setLevel(HttpLoggingInterceptor.Level.BODY) }
+        val client = OkHttpClient.Builder().addInterceptor(logging).build()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://model-api-373437380047.asia-southeast2.run.app")
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val apiService = retrofit.create(ApiService::class.java)
+
+        apiService.classifyWaste(body).enqueue(object : Callback<WasteResponse> {
             override fun onResponse(call: Call<WasteResponse>, response: Response<WasteResponse>) {
                 if (response.isSuccessful) {
                     val result = response.body()
@@ -120,4 +135,12 @@ class WasteClassificationActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
+    interface ApiService {
+        @Multipart
+        @POST("/classify")
+        fun classifyWaste(@Part file: MultipartBody.Part): Call<WasteResponse>
+    }
+
+    data class WasteResponse(val prediksi: String, val confidence: Double)
 }

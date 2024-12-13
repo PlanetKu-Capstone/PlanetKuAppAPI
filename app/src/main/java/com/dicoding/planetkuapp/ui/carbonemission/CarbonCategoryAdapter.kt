@@ -7,9 +7,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.planetkuapp.R
 
+// Data model yang sesuai dengan API
 data class CarbonCategory(
-    val categoryName: String,
-    val totalEmission: String
+    val electriccity: String,
+    val gas: String,
+    val transportation: String,
+    val food: String,
+    val organic_waste: String,
+    val inorganic_waste: String,
+    val carbon_footprint: String
 )
 
 class CarbonCategoryAdapter(
@@ -37,12 +43,23 @@ class CarbonCategoryAdapter(
     override fun getItemCount(): Int = categories.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
-        private val tvTotalEmission: TextView = itemView.findViewById(R.id.tvTotalEmission)
+        private val tvElectricity: TextView = itemView.findViewById(R.id.tvElectricity)
+        private val tvGas: TextView = itemView.findViewById(R.id.tvGas)
+        private val tvTransportation: TextView = itemView.findViewById(R.id.tvTransportation)
+        private val tvFood: TextView = itemView.findViewById(R.id.tvFood)
+        private val tvOrganicWaste: TextView = itemView.findViewById(R.id.tvOrganicWaste)
+        private val tvInorganicWaste: TextView = itemView.findViewById(R.id.tvInorganicWaste)
+        private val tvCarbonFootprint: TextView = itemView.findViewById(R.id.tvCarbonFootprint)
 
         fun bind(category: CarbonCategory, onClick: (CarbonCategory) -> Unit) {
-            tvCategoryName.text = category.categoryName
-            tvTotalEmission.text = category.totalEmission
+            tvElectricity.text = "Electricity: ${category.electriccity} kg CO2"
+            tvGas.text = "Gas: ${category.gas} kg CO2"
+            tvTransportation.text = "Transportation: ${category.transportation} kg CO2"
+            tvFood.text = "Food: ${category.food} kg CO2"
+            tvOrganicWaste.text = "Organic Waste: ${category.organic_waste} kg CO2"
+            tvInorganicWaste.text = "Inorganic Waste: ${category.inorganic_waste} kg CO2"
+            tvCarbonFootprint.text = "Total: ${category.carbon_footprint} kg CO2"
+
             itemView.setOnClickListener { onClick(category) }
         }
     }

@@ -2,23 +2,71 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="8dp"
     android:background="?selectableItemBackground">
 
+    <!-- Electricity -->
     <TextView
-        android:id="@+id/tvCategoryName"
-        android:layout_width="0dp"
+        android:id="@+id/tvElectricity"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/kategori"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="Electricity: 0 kg CO2"
+        android:textSize="14sp"
+        android:paddingBottom="4dp" />
 
+    <!-- Gas -->
     <TextView
-        android:id="@+id/tvTotalEmission"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvGas"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0 kg CO2"
-        android:textSize="14sp" />
+        android:text="Gas: 0 kg CO2"
+        android:textSize="14sp"
+        android:paddingBottom="4dp" />
+
+    <!-- Transportation -->
+    <TextView
+        android:id="@+id/tvTransportation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transportation: 0 kg CO2"
+        android:textSize="14sp"
+        android:paddingBottom="4dp" />
+
+    <!-- Food -->
+    <TextView
+        android:id="@+id/tvFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Food: 0 kg CO2"
+        android:textSize="14sp"
+        android:paddingBottom="4dp" />
+
+    <!-- Organic Waste -->
+    <TextView
+        android:id="@+id/tvOrganicWaste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Organic Waste: 0 kg CO2"
+        android:textSize="14sp"
+        android:paddingBottom="4dp" />
+
+    <!-- Inorganic Waste -->
+    <TextView
+        android:id="@+id/tvInorganicWaste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inorganic Waste: 0 kg CO2"
+        android:textSize="14sp"
+        android:paddingBottom="4dp" />
+
+    <!-- Total Carbon Footprint -->
+    <TextView
+        android:id="@+id/tvCarbonFootprint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total: 0 kg CO2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp" />
 </LinearLayout>
